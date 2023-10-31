@@ -9,6 +9,14 @@ import { LoginComponent } from './Athuentication/singup/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+
+import {MatDividerModule} from '@angular/material/divider';
+
+
 
 
 6
@@ -27,7 +35,13 @@ import {MatCardModule} from '@angular/material/card';
     ReactiveFormsModule,
     FormsModule,
     MatSlideToggleModule,
-    MatCardModule
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatDividerModule
+    
 
   ],
   providers: [],
