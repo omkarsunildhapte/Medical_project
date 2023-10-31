@@ -9,17 +9,17 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent {
   hidePassword: boolean = true;
 
-  hide:any
+  hide: any
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
 
-  
+
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
-}
+  }
 
   onSubmit() {
     if (this.loginForm.valid) {
@@ -31,6 +31,4 @@ export class LoginComponent {
   togglePasswordVisibility() {
     this.hidePassword = !this.hidePassword;
   }
-
-
 }

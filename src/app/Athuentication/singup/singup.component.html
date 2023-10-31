@@ -1,1 +1,35 @@
-<p>singup works!</p>
+<div class="bg-primary w-100 h-100 d-flex justify-content-center">
+    <div class="text-center d-flex align-items-center col-3">
+        <mat-card class="col-12">
+            <mat-card-title class="py-3 fs-3">Signup</mat-card-title>
+            <mat-card-content>
+                <form class="d-flex flex-column gap-2" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput class="border-0" type="email" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="input-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput class="border-0" type="password" formControlName="password"
+                            [type]="hidePassword ? 'password' : 'text'">
+                        <button mat-button matSuffix (click)="togglePasswordVisibility()">
+                            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password</mat-label>
+                        <input matInput class="border-0" type="password" formControlName="confirmpassword"
+                            [type]="hideconfirmPassword ? 'password' : 'text'">
+                        <button mat-button matSuffix (click)="toggleConfrimPasswordVisibility()">
+                            <mat-icon>{{ hideconfirmPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit" class="w-full">Signup</button>
+                </form>
+                <div class="py-3">
+                    <p>Already have an account ? <span class="text-primary fw-semibold" routerLink="">Login</span></p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
