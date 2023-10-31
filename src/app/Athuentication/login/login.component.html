@@ -1,15 +1,15 @@
-<div class="center-container">
-    <mat-card class="example-card">
+<div class="flex justify-center">
+    <mat-card class="">
         <div class="">
             <h1 class="">Login</h1>
         </div>
-        <mat-card-content class="mat-card">
-            <form class="fullwidth" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                <mat-form-field appearance="fill" class="input-field">
+        <mat-card-content>
+            <form class="w-full flex flex-col" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field appearance="outline" class="input-field">
                     <mat-label>Email</mat-label>
                     <input matInput type="email" formControlName="email">
                 </mat-form-field>
-                <mat-form-field appearance="fill" class="input-field">
+                <mat-form-field appearance="outline" class="input-field">
                     <mat-label>Password</mat-label>
                     <input matInput type="password" formControlName="password"
                         [type]="hidePassword ? 'password' : 'text'">
@@ -17,11 +17,7 @@
                         <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
                     </button>
                 </mat-form-field>
-                <div class="">
-                    <a href="">Forgot Password?</a>
-                </div>
-                <button mat-raised-button color="primary" type="submit" class="center-button"
-                    style="width: 100%;">Login</button>
+                <button mat-raised-button color="primary" type="submit" class="w-full">Login</button>
             </form>
         </mat-card-content>
     </mat-card>
