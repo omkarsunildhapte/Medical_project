@@ -1,0 +1,28 @@
+<div class="bg-primary w-100 h-100 d-flex justify-content-center">
+    <div class="text-center d-flex align-items-center col-md-3">
+        <mat-card class="col-12">
+            <mat-card-title class="py-3 fs-3">Login</mat-card-title>
+            <mat-card-content>
+                <form class="d-flex flex-column gap-2" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline" class="input-field">
+                        <mat-label>Email</mat-label>
+                        <input matInput class="border-0" type="email" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="input-field">
+                        <mat-label>Password</mat-label>
+                        <input matInput class="border-0" type="password" formControlName="password"
+                            [type]="hidePassword ? 'password' : 'text'">
+                        <button mat-button matSuffix (click)="togglePasswordVisibility()">
+                            <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit" class="w-full">Login</button>
+                </form>
+                <div class="py-3">
+                    <p>Don't have the an account ? <span class="text-primary fw-semibold"
+                            routerLink="./signup">Signup</span></p>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
