@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+
+import { SharedRoutingModule } from './shared-routing.module';
+import { HeaderComponent } from './header/header.component';
+import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
@@ -10,32 +14,16 @@ import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule, } from '@angular/platform-browser/animations';
-import { LoginComponent } from './Athuentication/login/login.component';
-import { SingupComponent } from './Athuentication/singup/singup.component';
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { SharedModule } from './shared/shared.module';
-
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SingupComponent,
-    LoginComponent,
-    DashboardComponent,
-    
-
+    HeaderComponent,
+    SidemenuComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    ReactiveFormsModule,
-    FormsModule,
+    CommonModule,
+    SharedRoutingModule,
     MatSlideToggleModule,
     MatCardModule,
     MatInputModule,
@@ -46,11 +34,9 @@ import { SharedModule } from './shared/shared.module';
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    SharedModule
+
 
   ],
-  exports:[SharedModule],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports:[SidemenuComponent,HeaderComponent]
 })
-export class AppModule { }
+export class SharedModule { }
